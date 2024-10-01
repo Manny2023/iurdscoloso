@@ -13,7 +13,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Celular con Web</title>
+    <title>Celular con Web - Portada</title>
+    <link rel="manifest" href="manifest.json">
 
     <style>
         /* Estilos para simular un celular */
@@ -37,19 +38,19 @@
 
         .phone {
             width: 100%;
-            max-width: 300px; /* Tamaño del celular */
+            max-width: 300px;
             aspect-ratio: 9/18;
-            background-color: #ede8ec; /* Color rosado */
-            border-radius: 30px; /* Borde más suave */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(0, 0, 0, 0.1); /* Sombras realistas */
-            padding: 0; /* Sin padding para maximizar el espacio de la pantalla */
+            background-color: #ede8ec;
+            border-radius: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 0;
             position: relative;
-            border: 5px solid #333; /* Borde negro */
+            border: 5px solid #333;
             overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-clip: padding-box; /* Asegura que el borde no se superponga al fondo */
+            background-clip: padding-box;
         }
 
         /* Simular botón lateral */
@@ -57,7 +58,7 @@
             content: '';
             width: 50px;
             height: 5px;
-            background-color: #333; /* Negro */
+            background-color: #333;
             border-radius: 4px;
             position: absolute;
             top: 10px;
@@ -69,7 +70,7 @@
             content: '';
             width: 10px;
             height: 10px;
-            background-color: #333; /* Negro */
+            background-color: #333;
             border-radius: 50%;
             position: absolute;
             top: 15px;
@@ -79,17 +80,17 @@
         /* Estilo para el iframe */
         .web-content {
             width: 100%;
-            height: calc(100% - 60px); /* Ocupa todo el espacio menos el botón de inicio */
-            border: none; /* Sin borde para el iframe */
-            border-radius: 10px 10px 0 0; /* Esquinas redondeadas en la parte superior */
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra interior para el efecto de pantalla */
+            height: calc(100% - 60px);
+            border: none;
+            border-radius: 10px 10px 0 0;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
         /* Botón de encendido (lateral derecho) */
         .button-power {
             width: 5px;
             height: 50px;
-            background-color: #333; /* Negro */
+            background-color: #333;
             border-radius: 2px;
             position: absolute;
             right: -3px;
@@ -100,13 +101,13 @@
         .button-home {
             width: 40px;
             height: 40px;
-            background-color: #c7c5c5; /* Gris claro */
+            background-color: #c7c5c5;
             border-radius: 50%;
             position: absolute;
             bottom: 15px;
-            left: calc(50% - 20px); /* Centrar el botón */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para el botón */
-            cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+            left: calc(50% - 20px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -114,27 +115,27 @@
         }
 
         .button-home:hover {
-            background-color: #a8a6a6; /* Cambio de color al pasar el cursor */
+            background-color: #a8a6a6;
         }
 
         /* Estilos para el menú */
         .menu-container {
             position: absolute;
-            bottom: 70px; /* Por encima del botón home */
+            bottom: 70px;
             left: 50%;
             transform: translateX(-50%);
             background-color: rgba(255, 255, 255, 0.9);
             border: 2px solid #333;
             border-radius: 10px;
             padding: 10px;
-            display: none; /* Oculto por defecto */
+            display: none;
             flex-direction: column;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            z-index: 10; /* Asegura que el menú esté por encima del iframe */
+            z-index: 10;
         }
 
         .menu-button {
-            background-color: #ff08da; /* Color rosado para los botones del menú */
+            background-color: #ff08da;
             border: none;
             color: white;
             padding: 10px 20px;
@@ -146,7 +147,7 @@
         }
 
         .menu-button:hover {
-            background-color: #e006c0; /* Cambio de color al pasar el cursor */
+            background-color: #e006c0;
         }
     </style>
 </head>
@@ -155,209 +156,32 @@
     <div class="phone-container">
         <div class="phone">
             <div class="button-power"></div> <!-- Botón lateral de encendido -->
-            <!-- Botón de inicio circular con ID -->
-            <div class="button-home" id="home-button">🏠</div>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogos Jafra</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(to bottom, #3b3b3b, #000); /* Gradiente para fondo */
-        }
-
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1605787020820-0d6ca2b92bba') no-repeat center center/cover;
-            filter: brightness(50%) blur(2px); /* Brillo reducido y difuminado */
-            z-index: -1;
-            animation: zoom 20s infinite alternate ease-in-out; /* Animación de zoom */
-        }
-
-        .content {
-            text-align: center;
-            color: #000000; /* Texto en color negro */
-            z-index: 2;
-            animation: fadeIn 2s ease-in-out;
-            max-width: 90%;
-            margin: 20px;
-        }
-
-        h1 {
-            font-size: 44px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff; /* Remarcado blanco */
-        }
-
-        p {
-            font-size: 18px;
-            margin-bottom: 20px;
-            text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff; /* Remarcado blanco */
-        }
-
-        .line {
-            width: 150px;
-            height: 5px;
-            background: #e63946;
-            margin: 15px auto;
-            border-radius: 25px;
-            animation: grow 3s ease-in-out infinite alternate;
-        }
-
-        .image-container {
-            margin-top: 20px;
-        }
-
-        .catalog-image {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            border-radius: 20px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .catalog-image:hover {
-            transform: scale(1.05);
-        }
-
-        .date-time {
-            font-size: 16px;
-            margin-top: 10px;
-            color: #000;
-            background: rgba(255, 255, 255, 0.7); /* Fondo más claro para contraste */
-            padding: 10px 15px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 32px;
-            }
-
-            p {
-                font-size: 16px;
-            }
-
-            .line {
-                width: 120px;
-            }
-
-            .catalog-image {
-                max-width: 250px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 28px;
-            }
-
-            p {
-                font-size: 14px;
-            }
-
-            .line {
-                width: 100px;
-            }
-
-            .catalog-image {
-                max-width: 200px;
-            }
-
-            .date-time {
-                font-size: 14px;
-            }
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(-20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes grow {
-            0% { width: 150px; }
-            100% { width: 170px; }
-        }
-
-        @keyframes zoom {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.05); }
-        }
-    </style>
-</head>
-<body>
-    <div class="background"></div>
-    <div class="content">
-        <h2>Catálogos Jafra</h2>
-        <div class="line"></div>
-        <p>Descubre la belleza a través de nuestros catálogos exclusivos</p>
-        <div class="image-container">
-            <img src="https://media.licdn.com/dms/image/v2/D560BAQEU8qoopusVNg/company-logo_200_200/company-logo_200_200/0/1696954577290/jafra_cosmetics_logo?e=2147483647&v=beta&t=DjEPNighSnchVQnaR4ZLwro7naWIBDEEcr2Mln3vEkc" alt="Catálogo de Jafra" class="catalog-image">
-        </div>
-        <div class="date-time" id="dateTime"></div>
-    </div>
-
-    <script>
-        // Función para actualizar la fecha y hora en tiempo real
-        function updateDateTime() {
-            const dateTimeElement = document.getElementById('dateTime');
-            const now = new Date();
-
-            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-            const formattedDate = now.toLocaleDateString('es-ES', options);
-            const formattedTime = now.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
-
-            dateTimeElement.textContent = `Hoy es ${formattedDate}, ${formattedTime}`;
-        }
-
-        // Llamar a la función inicialmente y actualizar cada segundo
-        updateDateTime();
-        setInterval(updateDateTime, 1000);
-    </script>
-</body>
-</html>
-
-
-
+            <div class="button-home" id="home-button">🏠</div> <!-- Botón de inicio -->
 
             <!-- Contenedor del menú con 3 botones -->
             <div class="menu-container" id="menu-container">
-                <button class="menu-button" data-url="https://catalogosfuller.blogspot.com/p/fuller-capana-11-2024-mexico-margin.html">ver catalogo</button>
-                <button class="menu-button" data-url="https://catalogosfuller.blogspot.com/p/descarga-automatica-con-alerta-funcion.html">descargar pdf</button>
-                <button class="menu-button" data-url="https://catalogosfuller.blogspot.com/2024/08/menu-de-catalogos-margin-0where.html">catalogos</button>
+                <button class="menu-button" data-url="https://catalogosfuller.blogspot.com/p/fuller-capana-11-2024-mexico-margin.html">Ver catálogo</button>
+                <button class="menu-button" data-url="https://catalogosfuller.blogspot.com/p/descarga-automatica-con-alerta-funcion.html">Descargar PDF</button>
+                <button class="menu-button" data-url="https://catalogosfuller.blogspot.com/2024/08/menu-de-catalogos-margin-0where.html">Catálogos</button>
             </div>
+
+            <!-- Iframe donde se mostrará el contenido de los botones del menú -->
+            <iframe id="web-content" class="web-content"></iframe>
         </div>
     </div>
 
     <!-- Script para manejar el clic en el botón de inicio y los botones del menú -->
     <script>
-        // Espera a que el DOM esté completamente cargado
         document.addEventListener('DOMContentLoaded', function() {
-            // Obtiene el botón de inicio, el iframe y el contenedor del menú por sus IDs
             const homeButton = document.getElementById('home-button');
             const webContent = document.getElementById('web-content');
             const menuContainer = document.getElementById('menu-container');
 
-            // Añade un evento de clic al botón de inicio para alternar el menú
+            // **Aquí se define la pantalla principal o portada**
+            // Al cargar la página, esta URL será tu pantalla principal
+            webContent.src = 'https://catalogosfuller.blogspot.com/p/body-font-family-arial-sans-serif_29.html'; // Reemplaza 'tu-pantalla-principal.html' con tu archivo o contenido de portada
+
+            // Alternar el menú al presionar el botón de inicio
             homeButton.addEventListener('click', function() {
                 if (menuContainer.style.display === 'flex') {
                     menuContainer.style.display = 'none';
@@ -366,10 +190,8 @@
                 }
             });
 
-            // Obtiene todos los botones del menú
+            // Cambiar el contenido del iframe al hacer clic en los botones del menú
             const menuButtons = document.querySelectorAll('.menu-button');
-
-            // Añade eventos de clic a cada botón del menú para cambiar el src del iframe
             menuButtons.forEach(function(button) {
                 button.addEventListener('click', function() {
                     const url = this.getAttribute('data-url');
@@ -382,6 +204,7 @@
 
 </body>
 </html>
+
 
 
 
