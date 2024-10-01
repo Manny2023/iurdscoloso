@@ -13,155 +13,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Celular con Web</title>
-
-    <style>
-        /* Estilos para simular un celular */
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #fafafa;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .phone-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-        }
-
-        .phone {
-            width: 100%;
-            max-width: 300px; /* Tamaño del celular */
-            aspect-ratio: 9/18;
-            background-color: #ede8ec; /* Color rosado */
-            border-radius: 30px; /* Borde más suave */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(0, 0, 0, 0.1); /* Sombras realistas */
-            padding: 0; /* Sin padding para maximizar el espacio de la pantalla */
-            position: relative;
-            border: 5px solid #333; /* Borde negro */
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-clip: padding-box; /* Asegura que el borde no se superponga al fondo */
-        }
-
-        /* Simular botón lateral */
-        .phone::before {
-            content: '';
-            width: 50px;
-            height: 5px;
-            background-color: #333; /* Negro */
-            border-radius: 4px;
-            position: absolute;
-            top: 10px;
-            left: calc(50% - 25px);
-        }
-
-        /* Cámara frontal */
-        .phone::after {
-            content: '';
-            width: 10px;
-            height: 10px;
-            background-color: #333; /* Negro */
-            border-radius: 50%;
-            position: absolute;
-            top: 15px;
-            left: calc(50% - 5px);
-        }
-
-        /* Estilo para el iframe */
-        .web-content {
-            width: 100%;
-            height: calc(100% - 60px); /* Ocupa todo el espacio menos el botón de inicio */
-            border: none; /* Sin borde para el iframe */
-            border-radius: 10px 10px 0 0; /* Esquinas redondeadas en la parte superior */
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra interior para el efecto de pantalla */
-        }
-
-        /* Botón de encendido (lateral derecho) */
-        .button-power {
-            width: 5px;
-            height: 50px;
-            background-color: #333; /* Negro */
-            border-radius: 2px;
-            position: absolute;
-            right: -3px;
-            top: 90px;
-        }
-
-        /* Botón circular en la parte inferior */
-        .button-home {
-            width: 40px;
-            height: 40px;
-            background-color: #c7c5c5; /* Gris claro */
-            border-radius: 50%;
-            position: absolute;
-            bottom: 15px;
-            left: calc(50% - 20px); /* Centrar el botón */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para el botón */
-            cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: background-color 0.3s;
-        }
-
-        .button-home:hover {
-            background-color: #a8a6a6; /* Cambio de color al pasar el cursor */
-        }
-
-        /* Estilos para el menú */
-        .menu-container {
-            position: absolute;
-            bottom: 70px; /* Por encima del botón home */
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(255, 255, 255, 0.9);
-            border: 2px solid #333;
-            border-radius: 10px;
-            padding: 10px;
-            display: none; /* Oculto por defecto */
-            flex-direction: column;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            z-index: 10; /* Asegura que el menú esté por encima del iframe */
-        }
-
-        .menu-button {
-            background-color: #ff08da; /* Color rosado para los botones del menú */
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            margin: 5px 0;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: background-color 0.3s;
-        }
-
-        .menu-button:hover {
-            background-color: #e006c0; /* Cambio de color al pasar el cursor */
-        }
-    </style>
-</head>
-<body>
-
-    <div class="phone-container">
-        <div class="phone">
-            <div class="button-power"></div> <!-- Botón lateral de encendido -->
-            <!-- Botón de inicio circular con ID -->
-            <div class="button-home" id="home-button">🏠</div>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogos Jafra</title>
     <style>
         body, html {
@@ -307,7 +158,7 @@
 <body>
     <div class="background"></div>
     <div class="content">
-        <h2>Catálogos Jafra</h2>
+        <h1>Catálogos Jafra</h1>
         <div class="line"></div>
         <p>Descubre la belleza a través de nuestros catálogos exclusivos</p>
         <div class="image-container">
@@ -337,51 +188,6 @@
 </html>
 
 
-
-
-            <!-- Contenedor del menú con 3 botones -->
-            <div class="menu-container" id="menu-container">
-                <button class="menu-button" data-url="https://catalogosfuller.blogspot.com/p/fuller-capana-11-2024-mexico-margin.html">ver catalogo</button>
-                <button class="menu-button" data-url="https://catalogosfuller.blogspot.com/p/descarga-automatica-con-alerta-funcion.html">descargar pdf</button>
-                <button class="menu-button" data-url="https://catalogosfuller.blogspot.com/2024/08/menu-de-catalogos-margin-0where.html">catalogos</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Script para manejar el clic en el botón de inicio y los botones del menú -->
-    <script>
-        // Espera a que el DOM esté completamente cargado
-        document.addEventListener('DOMContentLoaded', function() {
-            // Obtiene el botón de inicio, el iframe y el contenedor del menú por sus IDs
-            const homeButton = document.getElementById('home-button');
-            const webContent = document.getElementById('web-content');
-            const menuContainer = document.getElementById('menu-container');
-
-            // Añade un evento de clic al botón de inicio para alternar el menú
-            homeButton.addEventListener('click', function() {
-                if (menuContainer.style.display === 'flex') {
-                    menuContainer.style.display = 'none';
-                } else {
-                    menuContainer.style.display = 'flex';
-                }
-            });
-
-            // Obtiene todos los botones del menú
-            const menuButtons = document.querySelectorAll('.menu-button');
-
-            // Añade eventos de clic a cada botón del menú para cambiar el src del iframe
-            menuButtons.forEach(function(button) {
-                button.addEventListener('click', function() {
-                    const url = this.getAttribute('data-url');
-                    webContent.src = url;
-                    menuContainer.style.display = 'none'; // Oculta el menú después de seleccionar
-                });
-            });
-        });
-    </script>
-
-</body>
-</html>
 
 
 
