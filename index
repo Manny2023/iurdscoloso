@@ -165,7 +165,7 @@
                 <button class="menu-button" data-url="https://vimeo.com/event/4485560/embed/3638369759/interaction">TV</button>
                 <button class="menu-button" data-url="https://unife.mx/programacion/
 ">programacion</button>
-               <button class="menu-button" data-url="https://catalogosfuller.blogspot.com/p/body-font-family-arial-sans-serif_29.html">Inicio</button>
+               <button class="menu-button" data-url="https://elmensajeuniversal.blogspot.com/p/iglesia-universal-body-html-margin-0.html">Inicio</button>
             </div>
 
             <!-- Iframe donde se mostrará el contenido de los botones del menú -->
@@ -182,7 +182,7 @@
 
             // **Aquí se define la pantalla principal o portada**
             // Al cargar la página, esta URL será tu pantalla principal
-            webContent.src = 'https://catalogosfuller.blogspot.com/p/body-font-family-arial-sans-serif_29.html'; // Reemplaza 'tu-pantalla-principal.html' con tu archivo o contenido de portada
+            webContent.src = 'https://elmensajeuniversal.blogspot.com/p/iglesia-universal-body-html-margin-0.html'; // Reemplaza 'tu-pantalla-principal.html' con tu archivo o contenido de portada
 
             // Alternar el menú al presionar el botón de inicio
             homeButton.addEventListener('click', function() {
