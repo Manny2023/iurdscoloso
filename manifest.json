@@ -1,16 +1,16 @@
 
    
  {
-  "short_name": "JAFRA C.V",
-  "name": "C.V JAFRA",
+  "short_name": "iurdscoloso",
+  "name": "coloso iurds",
   "icons": [
   {
-      "src": "https://media.licdn.com/dms/image/v2/D560BAQEU8qoopusVNg/company-logo_200_200/company-logo_200_200/0/1696954577290/jafra_cosmetics_logo?e=2147483647&v=beta&t=DjEPNighSnchVQnaR4ZLwro7naWIBDEEcr2Mln3vEkc",
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKKBxg7EiQpCdNMcogl31km1XoqO_UTPC4y2IuQamUbOale519OSY7268&s=10",
       "sizes": "128x128",
       "type": "image/png"
     },
 	 {
-      "src": "https://media.licdn.com/dms/image/v2/D560BAQEU8qoopusVNg/company-logo_200_200/company-logo_200_200/0/1696954577290/jafra_cosmetics_logo?e=2147483647&v=beta&t=DjEPNighSnchVQnaR4ZLwro7naWIBDEEcr2Mln3vEkc",
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKKBxg7EiQpCdNMcogl31km1XoqO_UTPC4y2IuQamUbOale519OSY7268&s=10",
       "sizes": "512x512",
       "type": "image/png"
     }
@@ -18,8 +18,8 @@
   "start_url": "index.html",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#a1d9fc",
-  "theme_color": "#a1d9fc"
+  "background_color": "#f7051d",
+  "theme_color": "#f7051d"
 }
    
       
