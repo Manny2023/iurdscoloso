@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CATALOGOS JAFRA</title>
+  <title>IGLESIA UNIVERSAL</title>
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
 <head>
-    <title>JAFRA.CVIRTUALES</title>
+    <title>IURD</title>
   
 <!DOCTYPE html>
 <html lang="es">
@@ -158,13 +158,16 @@
             <div class="button-power"></div> <!-- Botón lateral de encendido -->
             <div class="button-home" id="home-button">🏠</div> <!-- Botón de inicio -->
 
-              <!-- Contenedor del menú con 3 botones -->
+            <!-- Contenedor del menú con 3 botones -->
+                  <!-- Contenedor del menú con 3 botones -->
             <div class="menu-container" id="menu-container">
-                <button class="menu-button" data-url="https://catalogosfuller.blogspot.com/p/fuller-capana-11-2024-mexico-margin.html">Ver catálogo</button>
-                <button class="menu-button" data-url="https://catalogosfuller.blogspot.com/p/descarga-automatica-con-alerta-funcion.html">Descargar PDF</button>
-                <button class="menu-button" data-url="https://catalogosfuller.blogspot.com/2024/08/menu-de-catalogos-margin-0where.html">Catálogos</button>
+                <button class="menu-button" data-url="https://elmensajeuniversal.blogspot.com/2024/10/s-spanhover-colorvar-primary-audio.html">Ver catálogo</button>
+                <button class="menu-button" data-url="https://vimeo.com/event/4485560/embed/3638369759/interaction">TV</button>
+                <button class="menu-button" data-url="https://unife.mx/programacion/
+">programacion</button>
                <button class="menu-button" data-url="https://catalogosfuller.blogspot.com/p/body-font-family-arial-sans-serif_29.html">Inicio</button>
             </div>
+
             <!-- Iframe donde se mostrará el contenido de los botones del menú -->
             <iframe id="web-content" class="web-content"></iframe>
         </div>
