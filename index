@@ -1,21 +1,29 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>IGLESIA UNIVERSAL</title>
-  <link rel="manifest" href="manifest.json">
-</head>
-<body>
-<head>
-    <title>IURD</title>
-  
-<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Celular con Web - Portada</title>
+    <title>IGLESIA UNIVERSAL</title>
     <link rel="manifest" href="manifest.json">
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+        window.OneSignalDeferred = window.OneSignalDeferred || [];
+        OneSignalDeferred.push(async function(OneSignal) {
+            await OneSignal.init({
+                appId: "d7cce0be-3363-4a4f-b359-052bbbe8e096"
+            });
+        });
 
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(function(registration) {
+                    console.log('Service Worker registrado con éxito:', registration);
+                })
+                .catch(function(error) {
+                    console.log('Error al registrar el Service Worker:', error);
+                });
+        }
+    </script>
     <style>
         /* Estilos para simular un celular */
         body {
@@ -28,14 +36,12 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         .phone-container {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
         }
-
         .phone {
             width: 100%;
             max-width: 300px;
@@ -52,154 +58,45 @@
             align-items: center;
             background-clip: padding-box;
         }
-
-        /* Simular botón lateral */
-        .phone::before {
-            content: '';
-            width: 50px;
-            height: 5px;
-            background-color: #333;
-            border-radius: 4px;
-            position: absolute;
-            top: 10px;
-            left: calc(50% - 25px);
-        }
-
-        /* Cámara frontal */
-        .phone::after {
-            content: '';
-            width: 10px;
-            height: 10px;
-            background-color: #333;
-            border-radius: 50%;
-            position: absolute;
-            top: 15px;
-            left: calc(50% - 5px);
-        }
-
-        /* Estilo para el iframe */
-        .web-content {
-            width: 100%;
-            height: calc(100% - 60px);
-            border: none;
-            border-radius: 10px 10px 0 0;
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Botón de encendido (lateral derecho) */
-        .button-power {
-            width: 5px;
-            height: 50px;
-            background-color: #333;
-            border-radius: 2px;
-            position: absolute;
-            right: -3px;
-            top: 90px;
-        }
-
-        /* Botón circular en la parte inferior */
-        .button-home {
-            width: 40px;
-            height: 40px;
-            background-color: #c7c5c5;
-            border-radius: 50%;
-            position: absolute;
-            bottom: 15px;
-            left: calc(50% - 20px);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: background-color 0.3s;
-        }
-
-        .button-home:hover {
-            background-color: #a8a6a6;
-        }
-
-        /* Estilos para el menú */
-        .menu-container {
-            position: absolute;
-            bottom: 70px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(255, 255, 255, 0.9);
-            border: 2px solid #333;
-            border-radius: 10px;
-            padding: 10px;
-            display: none;
-            flex-direction: column;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            z-index: 10;
-        }
-
-        .menu-button {
-            background-color: #ff08da;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            margin: 5px 0;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: background-color 0.3s;
-        }
-
-        .menu-button:hover {
-            background-color: #e006c0;
-        }
+        /* Más estilos... */
     </style>
 </head>
 <body>
 
     <div class="phone-container">
         <div class="phone">
-            <div class="button-power"></div> <!-- Botón lateral de encendido -->
-            <div class="button-home" id="home-button">🏠</div> <!-- Botón de inicio -->
+            <div class="button-power"></div>
+            <div class="button-home" id="home-button">🏠</div>
 
-            <!-- Contenedor del menú con 3 botones -->
-                  <!-- Contenedor del menú con 3 botones -->
             <div class="menu-container" id="menu-container">
                 <button class="menu-button" data-url="https://elmensajeuniversal.blogspot.com/2024/10/s-spanhover-colorvar-primary-audio.html">RADIO</button>
                 <button class="menu-button" data-url="https://vimeo.com/event/4485560/embed/3638369759/interaction">TV</button>
-                <button class="menu-button" data-url="https://unife.mx/programacion/
-">programacion</button>
-               <button class="menu-button" data-url="https://elmensajeuniversal.blogspot.com/p/iglesia-universal-body-html-margin-0.html">Inicio</button>
+                <button class="menu-button" data-url="https://unife.mx/programacion/">PROGRAMACION</button>
+                <button class="menu-button" data-url="https://elmensajeuniversal.blogspot.com/p/iglesia-universal-body-html-margin-0.html">Inicio</button>
             </div>
 
-            <!-- Iframe donde se mostrará el contenido de los botones del menú -->
             <iframe id="web-content" class="web-content"></iframe>
         </div>
     </div>
 
-    <!-- Script para manejar el clic en el botón de inicio y los botones del menú -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const homeButton = document.getElementById('home-button');
             const webContent = document.getElementById('web-content');
             const menuContainer = document.getElementById('menu-container');
 
-            // **Aquí se define la pantalla principal o portada**
-            // Al cargar la página, esta URL será tu pantalla principal
-            webContent.src = 'https://elmensajeuniversal.blogspot.com/p/iglesia-universal-body-html-margin-0.html'; // Reemplaza 'tu-pantalla-principal.html' con tu archivo o contenido de portada
+            webContent.src = 'https://elmensajeuniversal.blogspot.com/p/iglesia-universal-body-html-margin-0.html';
 
-            // Alternar el menú al presionar el botón de inicio
             homeButton.addEventListener('click', function() {
-                if (menuContainer.style.display === 'flex') {
-                    menuContainer.style.display = 'none';
-                } else {
-                    menuContainer.style.display = 'flex';
-                }
+                menuContainer.style.display = menuContainer.style.display === 'flex' ? 'none' : 'flex';
             });
 
-            // Cambiar el contenido del iframe al hacer clic en los botones del menú
             const menuButtons = document.querySelectorAll('.menu-button');
             menuButtons.forEach(function(button) {
                 button.addEventListener('click', function() {
                     const url = this.getAttribute('data-url');
                     webContent.src = url;
-                    menuContainer.style.display = 'none'; // Oculta el menú después de seleccionar
+                    menuContainer.style.display = 'none';
                 });
             });
         });
@@ -207,32 +104,3 @@
 
 </body>
 </html>
-
-
-
-
-  <!-- Contenido de tu aplicación aquí -->
-  <script src="main.js"></script>
-</body>
-</html> _ _
-<script>
-
-  if ('serviceWorker' in navigator) {
-
-    navigator.serviceWorker.register('service-worker.js')
-
-      .then(function(registration) {
-
-        console.log('Service Worker registrado con éxito:', registration);
-
-      })
-
-      .catch(function(error) {
-
-        console.log('Error al registrar el Service Worker:', error);
-
-      });
-
-  }
-
-</script>
